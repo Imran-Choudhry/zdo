@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Zindagi Development Organization (ZDO) - NGO working in Dadu District, Sindh, Pakistan for social justice, flood relief, education, and women empowerment.">
+    <title>Zindagi Development Organization | Dadu, Sindh, Pakistan</title>
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #1e2a3e;
+            line-height: 1.6;
+            background: #fefefe;
+        }
+
+        h1, h2, h3, h4, .logo, .nav-links a, .btn {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ZDO Brand Colors */
+        :root {
+            --primary: #2c7a4d;
+            --primary-dark: #1e5a3a;
+            --primary-light: #4a9e6e;
+            --secondary: #f4a261;
+            --accent: #e76f51;
+            --light-bg: #f0f7f2;
+            --dark-text: #1e2a3e;
+            --gray-text: #4a5568;
+            --white: #ffffff;
+            --shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.2;
+        }
+        .logo-text p {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            color: var(--gray-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--dark-text);
+            transition: 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #eef7ed 0%, #ffffff 100%);
+            padding: 70px 0;
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1;
+        }
+        .hero-content h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--gray-text);
+        }
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .stat h3 {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+        .hero-img {
+            flex: 1;
+            text-align: center;
+        }
+        .hero-img img {
+            max-width: 100%;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+            color: var(--primary-dark);
+        }
+        .section-sub {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: var(--gray-text);
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
+        }
+        .service-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+        .service-card i {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            margin-bottom: 12px;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        /* Impact */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .impact-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .impact-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #cbd5e1;
+        }
+        .impact-text {
+            padding: 20px;
+        }
+        .impact-text h3 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        /* Facebook Feed */
+        .fb-feed {
+            background: var(--light-bg);
+            text-align: center;
+        }
+        .fb-placeholder {
+            background: #e9f0e9;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .fb-placeholder i {
+            font-size: 3rem;
+            color: #1877f2;
+            margin-bottom: 15px;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .contact-info, .contact-form {
+            flex: 1;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 30px;
+            font-family: inherit;
+        }
+        .map {
+            margin-top: 50px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        footer {
+            background: #0f2c1f;
+            color: #cbd5e6;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 12px;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            color: var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 0;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-grid {
+                flex-direction: column;
+            }
+            .logo-img {
+                height: 45px;
+            }
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <!-- ZDO Logo - Save your image as 'zdo-Logo.png' in the same folder -->
+                <img src="zdo-Logo.png" alt="Zindagi Development Organization Logo" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/200x80/2c7a4d/white?text=ZDO';">
+                <div class="logo-text">
+                    <h1>Zindagi Development</h1>
+                    <p>Dadu | Sindh | Pakistan</p>
+                </div>
+            </div>
+            <div class="mobile-menu" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Building a Just & Equal Society</h1>
+                <p><strong>Zindagi Development Organization (ZDO)</strong> envisions a balanced society based on social justice and equality — free from all types of discriminations and poverty. Where every person has space and opportunities for their own development.</p>
+                <a href="#contact" class="btn">Support Our Mission <i class="fas fa-hand-holding-heart"></i></a>
+                <div class="hero-stats">
+                    <div class="stat"><h3>20+</h3><p>Villages Reached</p></div>
+                    <div class="stat"><h3>8000+</h3><p>Lives Impacted</p></div>
+                    <div class="stat"><h3>25+</h3><p>Community Projects</p></div>
+                </div>
+            </div>
+            <div class="hero-img">
+                <img src="https://placehold.co/600x400/e2f0e2/2c7a4d?text=ZDO+Flood+Relief+Team" alt="ZDO Team in Action">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Zindagi Development Organization</h2>
+            <p class="section-sub">Registered non-profit working in Dadu District, Sindh, Pakistan — focused on social justice, flood relief, and sustainable development.</p>
+            <div style="max-width: 800px; margin: auto; text-align: center;">
+                <p><strong>Our Vision:</strong> The organization envisions a balanced society, based on social justice and equality, is free from all types of discriminations and a poverty eradicated society where every one has space and opportunities for their own development.</p>
+                <br>
+                <p><strong>President:</strong> Imran Korai<br>
+                <strong>Mobile:</strong> 0300 3270008<br>
+                <strong>Email:</strong> zdo.org.pk@gmail.com</p>
+                <br>
+                <p><strong>📍 Head Office:</strong> Dadu City, Near Press Club, Dadu District, Sindh, Pakistan</p>
+                <p><strong>📅 Registration:</strong> Social Welfare Department, Govt of Sindh</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title">Our Core Areas</h2>
+            <p class="section-sub">Holistic development programs for Dadu's rural communities.</p>
+            <div class="services-grid">
+                <div class="service-card"><i class="fas fa-water"></i><h3>Flood Relief & Recovery</h3><p>Emergency food, clean water, and shelter for flood-affected families in UC Sial and other submerged villages.</p></div>
+                <div class="service-card"><i class="fas fa-graduation-cap"></i><h3>Quality Education</h3><p>Non-formal schools and scholarships for out-of-school children in remote areas like Johi, Khairpur Nathan Shah.</p></div>
+                <div class="service-card"><i class="fas fa-hand-holding-medical"></i><h3>Health & Hygiene</h3><p>Mobile health camps, maternal health awareness, and WASH initiatives to prevent waterborne diseases.</p></div>
+                <div class="service-card"><i class="fas fa-female"></i><h3>Women Empowerment</h3><p>Vocational training (sewing, handicrafts) and legal awareness for economic independence.</p></div>
+                <div class="service-card"><i class="fas fa-tint"></i><h3>Clean Water Access</h3><p>Installation of hand pumps and solar water filtration plants in drought-affected union councils.</p></div>
+                <div class="service-card"><i class="fas fa-tree"></i><h3>Climate Resilience</h3><p>Mangrove plantation, flood preparedness training, and sustainable farming workshops.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section with Real Flood Story -->
+    <section id="impact">
+        <div class="container">
+            <h2 class="section-title">Our Impact: Real Stories from the Field</h2>
+            <p class="section-sub">Latest update — September 6, 2025: Reaching flood victims in UC Sial.</p>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <img src="https://placehold.co/400x200/4a6fa5/white?text=Flood+Relief+Boats" alt="ZDO flood relief boats">
+                    <div class="impact-text">
+                        <h3>Emergency Flood Response – UC Sial</h3>
+                        <p>When floodwaters swallowed homes in Sono Khan Jatoi, Mubarak Jatoi, and Balocho Khan Jatoi, ZDO with GCDT reached them by boats. We distributed cooked meals, boiled eggs, and clean water.</p>
+                        <p><em>"We had lost everything, but the food and water gave us hope that we are not forgotten."</em> — Flood-affected villager</p>
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <img src="https://placehold.co/400x200/2c7a4d/white?text=Food+Distribution" alt="Food distribution">
+                    <div class="impact-text">
+                        <h3>Food & Nutrition Support</h3>
+                        <p>Provided hot cooked meals and protein-rich boiled eggs to hungry children and families stranded after the floods — a message of humanity and solidarity.</p>
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <img src="https://placehold.co/400x200/e76f51/white?text=Clean+Water+Drive" alt="Clean water">
+                    <div class="impact-text">
+                        <h3>Safe Drinking Water</h3>
+                        <p>Delivered clean water to prevent waterborne diseases in flood-affected villages, ensuring health protection during the crisis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facebook Integration -->
+    <section class="fb-feed">
+        <div class="container">
+            <h2 class="section-title">Follow Our Journey</h2>
+            <p class="section-sub">Get real-time updates, photos, and stories from Zindagi Development Organization on Facebook.</p>
+            <div class="fb-placeholder">
+                <i class="fab fa-facebook-square"></i>
+                <h3>Zindagi Development Organization Dadu</h3>
+                <p>👉 <strong>Official Facebook Page:</strong> <a href="https://www.facebook.com/share/18Asir7VDs/" target="_blank" rel="noopener noreferrer">facebook.com/ZindagiDevelopmentDadu</a></p>
+                <a href="https://www.facebook.com/share/18Asir7VDs/" target="_blank" class="btn btn-outline" style="margin-top: 15px;"><i class="fab fa-facebook"></i> Visit Facebook Page</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Zindagi Development Organization</h3>
+                    <p><i class="fas fa-user-tie"></i> <strong>President:</strong> Imran Korai</p>
+                    <p><i class="fas fa-phone-alt"></i> <strong>Mobile:</strong> 0300 3270008</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> zdo.org.pk@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dadu City, Near Press Club, Dadu District, Sindh, Pakistan</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="https://www.facebook.com/share/18Asir7VDs/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="#" method="post">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <textarea rows="4" placeholder="Message / Volunteer / Donation inquiry"></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <p style="font-size: 0.8rem; margin-top: 10px;">*For urgent flood relief coordination, please call President Imran Korai directly.</p>
+                </div>
+            </div>
+            <div class="map">
+                <iframe src="https://maps.google.com/maps?q=Dadu%2C+Sindh%2C+Pakistan&t=&z=12&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Zindagi Development Organization – Dadu, Sindh. Building lives with dignity, justice, and equality.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/18Asir7VDs/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.8rem;">Registered non-profit | Social Welfare Department, Govt of Sindh</p>
+        <div class="developer-info">
+            <p><strong>Website Design & Developed by:</strong> <strong style="color: #f4a261;">IC Innovations - Digital Solutions Provider</strong></p>
+            <p><strong>Developer:</strong> Imran Choudhry | <i class="fas fa-phone"></i> 0300-3319242 | <i class="fas fa-envelope"></i> <a href="mailto:consultant.choudhry@gmail.com">consultant.choudhry@gmail.com</a></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    mobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElem = document.getElementById(targetId);
+            if(targetElem) {
+                targetElem.scrollIntoView({ behavior: 'smooth' });
+                navLinks.classList.remove('active');
+            }
+            links.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>
